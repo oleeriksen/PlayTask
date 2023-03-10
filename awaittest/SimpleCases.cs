@@ -35,8 +35,8 @@ namespace awaittest
             int result = taskHoldingTheResult.Result;
 
             Console.WriteLine($"Ordet {word} forekommer {result} gange");
-
         }
+
         private async Task<int> CountOcc(string word)
         {
             string[] fileContent = await File.ReadAllLinesAsync("jeopardy.json");
@@ -45,19 +45,12 @@ namespace awaittest
             int result = 0;
 
             // do the counting in the file
-            result = await CountOccAsync(fileContent, word);
+            result = CountOcc(fileContent, word);
             //Thread.Sleep(1000);
             Console.WriteLine("We are done with counting");
 
             return result;
-        }
-
-
-        private Task<int> CountOccAsync(string[] a, string key) {
-            Task<int> t = new Task<int>(() => { return CountOcc(a, key); });
-            t.Start();
-            return t;
-        }
+        }        
 
         private int CountOcc(string[] a, string key) {
             int res = 0;
@@ -68,6 +61,14 @@ namespace awaittest
             }
 
             return res;
+        }
+
+
+        private Task<int> CountOccAsync(string[] a, string key)
+        {
+            Task<int> t = new Task<int>(() => { return CountOcc(a, key); });
+            t.Start();
+            return t;
         }
     }
 }

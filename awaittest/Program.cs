@@ -4,24 +4,21 @@
     {
         private static void Main(string[] args)
         {
-            SimpleCases sc = new SimpleCases();
+            new SimpleCases().Run();
 
-            sc.Run();
+            //new AwaitTest1();
 
             //run();
-            //Console.WriteLine("After run...");
+            Console.WriteLine("Hit any key to close...");
             Console.ReadKey();
 
         }
 
-        static Task GetTask(int amount, string text)
-        {
+        static Task GetTask(int amount, string text){
             return new Task(() => write(amount, text));
         }
 
-        static void write(int amount, string text)
-        {
-
+        static void write(int amount, string text){
             for (int i = 0; i < amount; i++)
             {
                 Console.WriteLine("" + (i + 1) + " " + text);

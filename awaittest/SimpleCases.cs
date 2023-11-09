@@ -8,7 +8,7 @@ namespace awaittest
     {
 
         public void Run() {
-            StartTheFileAnalyze();
+            //StartTheFileAnalyze();
             UseCountOcc();
         }
 
@@ -29,7 +29,7 @@ namespace awaittest
 
 
         private void UseCountOcc() {
-            string word = "will";
+            string word = "the";
             Task<int> taskHoldingTheResult = CountOcc(word);
             // den næste linie er blokerende
             int result = taskHoldingTheResult.Result;
@@ -59,7 +59,6 @@ namespace awaittest
                 MatchCollection matches = regex.Matches(line);
                 res += matches.Count;
             }
-
             return res;
         }
 

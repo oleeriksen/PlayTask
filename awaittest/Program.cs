@@ -4,9 +4,9 @@
     {
         private static void Main(string[] args)
         {
-            new SimpleCases().Run();
+            //new SimpleCases().Run();
 
-            //new AwaitTest1();
+            new AwaitTest1();
 
             //run();
             Console.WriteLine("Hit any key to close...");

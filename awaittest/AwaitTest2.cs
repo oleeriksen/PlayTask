@@ -13,8 +13,12 @@ namespace awaittest
         public async void ExecuteMany(int n) {
             var start = DateTime.Now;
             Console.WriteLine($"Execute {n} tasks");
+            List<Task> tasks = new();
             for (int x = 1; x <= n; x++)
-                     await f1(x);
+                     tasks.Add(f1(x));
+            Console.WriteLine($"All {n} tasks started");
+
+            foreach (var t in tasks) t.Wait();
 
             var time = (DateTime.Now - start).TotalMilliseconds;
             Console.WriteLine($"End of {n} tasks - {time} used");
@@ -25,13 +29,12 @@ namespace awaittest
             Console.WriteLine($"Start Task {x}");
             int res = await CountSomething();
             Console.WriteLine($"End Task {x}");
-
         }
 
         private Task<int> CountSomething()
         {
             Task<int> t = new Task<int>(() => { Thread.Sleep(3000);
-                return 1234; });
+                return 7; });
             t.Start();
             return t;
         }

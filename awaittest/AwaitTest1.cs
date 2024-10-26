@@ -5,25 +5,25 @@ namespace awaittest
 	{
         public AwaitTest1()
         {
-            Console.WriteLine("A");
+            Console.WriteLine($"A");
             Execute();
-            Console.WriteLine("B");
+            Console.WriteLine($"B");
         }
 
         public async void Execute()
         {
             
-            Console.WriteLine("C");
+            Console.WriteLine($"C");
 
             await f1();
 
-            Console.WriteLine("D");
+            Console.WriteLine($"D");
 
         }
 
         private async Task f1()
         {
-            Console.WriteLine("E");
+            Console.WriteLine($"E");
             int res = await CountSomething();
             Console.WriteLine($"F");
 

@@ -6,8 +6,8 @@
         {
             //new SimpleCases().Run();
 
-            new AwaitTest1();
-
+            //new AwaitTest1();
+            new TaskTest1().Run();
             //run();
             Console.WriteLine("Hit any key to close...");
             Console.ReadKey();

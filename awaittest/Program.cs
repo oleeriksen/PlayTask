@@ -4,10 +4,10 @@
     {
         private static void Main(string[] args)
         {
-            //new SimpleCases().Run();
+            new SimpleCases().Run();
 
             //new AwaitTest1();
-            new TaskTest1().Run();
+            //new TaskTest1().Run();
             //run();
             Console.WriteLine("Hit any key to close...");
             Console.ReadKey();

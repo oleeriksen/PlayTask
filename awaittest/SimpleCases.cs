@@ -8,23 +8,24 @@ namespace awaittest
     {
 
         public void Run() {
-            //StartTheFileAnalyze();
-            UseCountOcc();
+            StartTheFileAnalyze();
+            //UseCountOcc();
         }
 
         public void StartTheFileAnalyze() {
+            Console.WriteLine("Start simple case");
             AnalyzeFile();
-            Console.WriteLine("File analyzed started");
+            Console.WriteLine("Started");
         }
 
         private async void AnalyzeFile()
         {
+            Console.WriteLine("We are done with...");
             string[] fileContent = await File.ReadAllLinesAsync("jeopardy.json");
-            Console.WriteLine("We are done with reading the file");
+            Console.WriteLine("Reading data");
             // do all the analyzing stuff
             Thread.Sleep(1000);
-
-            Console.WriteLine("We are done with the file anayzing");
+            Console.WriteLine("Analyzing data");
         }
 
 
